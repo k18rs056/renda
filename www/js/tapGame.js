@@ -56,6 +56,12 @@ gameScore.save()
     
     // ********************************************************
 }
+    // Alarmの処理
+function alarm(){
+    var audio = new Audio();
+      audio.src = "pin.wav"
+      audio.play();
+}
 
 // タイマー
 function countTime(time) {
@@ -64,6 +70,7 @@ function countTime(time) {
             this.tapFlag = false;
             $("#list-page p").html(String(time-10));
         } else if (time == 10) {
+            alarm();
             this.tapFlag = true;
             $("#list-page p").html("スタート！");
         } else {
@@ -79,6 +86,7 @@ function countTime(time) {
         imputName(this.counter);
     }    
 }
+
 
 // 名前入力アラートの表示
 function imputName(count){
@@ -101,12 +109,5 @@ function tapCount() {
     if (tapFlag) {
         this.counter += 1;
         $("#list-page strong").html(String(this.counter));
-    }
-
-    if(tapFlag){
-      if(this.counter >= 30){
-        this.size = "15";
-        $("#list-page strong").html(String(this.counter));
-      }
     }
 }

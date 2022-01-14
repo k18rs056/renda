@@ -1,4 +1,11 @@
 /* set padding for iOS status bar */
+h1{
+  color:lime;
+}
+
+strong{
+  color:crimson;
+}
 .ua-ios .ui-page {
     padding-top: 63px !important;
 }
